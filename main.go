@@ -21,7 +21,7 @@ func init() {
 
 func main() {
 	corsConfig := cors.DefaultConfig()
-	corsConfig.AllowOrigins = []string{"http://localhost:3000"}
+	corsConfig.AllowOrigins = []string{"localhost:9193"}
 	corsConfig.AllowCredentials = true
 
 	server.Use(cors.New(corsConfig))
@@ -45,5 +45,5 @@ func main() {
 		ctx.JSON(http.StatusNotFound, gin.H{"status": "error", "message": "Route Not Found"})
 	})
 
-	log.Fatal(server.Run(":" + "8000"))
+	log.Fatal(server.Run(":" + "9220"))
 }
